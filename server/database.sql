@@ -5,3 +5,10 @@ CREATE TABLE IF NOT EXISTS restaurants (
     full_name VARCHAR(100) NOT NULL,
     location VARCHAR(100) NOT NULL,
     rating INTEGER NOT NULL);
+
+CREATE TABLE IF NOT EXISTS reviews (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    review TEXT NOT NULL,
+    rating INT CHECK(rating >= 1 and rating <= 5)
+);
